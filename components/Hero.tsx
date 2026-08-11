@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowRight, Check, Circle, Code2, Play } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "./Button";
 import { DecryptHeading } from "./DecryptHeading";
 
@@ -44,9 +47,30 @@ function WorkspaceVisual() {
 }
 
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const [animationCycle, setAnimationCycle] = useState(0);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const rect = hero.getBoundingClientRect();
+    const visibleHeight = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+    let wasVisible = visibleHeight / rect.height >= 0.25;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      const isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+      if (isVisible && !wasVisible) setAnimationCycle((cycle) => cycle + 1);
+      wasVisible = isVisible;
+    }, { threshold: [0, 0.25] });
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="hero-scene grid-bg relative overflow-hidden border-b border-[var(--line)]">
-      <div className="shell grid min-h-[calc(100svh-77px)] items-center gap-14 py-16 lg:grid-cols-[.95fr_1.05fr] lg:py-20">
+    <section ref={heroRef} className="hero-scene grid-bg relative overflow-hidden border-b border-[var(--line)]">
+      <div key={animationCycle} className="shell grid min-h-[calc(100svh-77px)] items-center gap-14 py-16 lg:grid-cols-[.95fr_1.05fr] lg:py-20">
         <div className="relative z-10 min-w-0">
           <div className="hero-kicker mb-8 inline-flex items-center gap-2 border border-[var(--line)] bg-[#101514] px-3 py-2 text-xs text-[var(--muted)]"><Code2 size={15} className="text-[var(--mint)]" /><strong className="text-white">Project-first</strong> development learning</div>
           <DecryptHeading />
