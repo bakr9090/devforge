@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+npm-debug.log*
+.runtime/
+.node-*.zip
+.browser-*/
+.dev-server.json
+dev-server*.log
