@@ -14,8 +14,8 @@ export function AuthForm({ mode }: { mode: "login" | "register" }) {
     <Field label="Password" type="password" placeholder="At least 8 characters" autoComplete={isLogin ? "current-password" : "new-password"} />
     {!isLogin && <Field label="Confirm password" type="password" placeholder="Repeat your password" autoComplete="new-password" />}
     {isLogin && <div className="flex items-center justify-between gap-4 text-sm"><label className="flex items-center gap-2 text-[var(--muted)]"><input type="checkbox" className="accent-[var(--mint)]" />Remember me</label><Link href="/contact" className="focus-ring text-[var(--mint)] hover:text-white">Forgot password?</Link></div>}
-    <button className="focus-ring flex min-h-12 w-full items-center justify-center gap-2 bg-[var(--mint)] px-5 font-bold text-[var(--ink)] transition-colors hover:bg-white" type="submit">{isLogin ? "Log in" : "Create account"}<ArrowRight size={17} /></button>
-    {submitted && <p className="border border-[var(--yellow)]/40 bg-[var(--yellow)]/10 p-3 text-sm text-[var(--yellow)]" role="status">Demo only: connect Auth.js or Supabase to enable account access.</p>}
+    <button className="btn-motion focus-ring flex min-h-12 w-full items-center justify-center gap-2 bg-[var(--mint)] px-5 font-bold text-[var(--ink)] hover:bg-white" type="submit">{isLogin ? "Log in" : "Create account"}<ArrowRight size={17} /></button>
+    {submitted && <p className="form-alert border border-[var(--yellow)]/40 bg-[var(--yellow)]/10 p-3 text-sm text-[var(--yellow)]" role="status">Account access is not enabled yet. No account information was submitted.</p>}
   </form>;
 }
 

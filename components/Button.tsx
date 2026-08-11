@@ -17,7 +17,7 @@ export function Button({ href, children, variant = "primary", className = "", ar
   };
 
   return (
-    <Link href={href} className={`focus-ring inline-flex min-h-11 items-center justify-center gap-2 border px-5 py-3 text-sm font-bold transition-colors ${styles[variant]} ${className}`}>
+    <Link href={href} className={`btn-motion focus-ring inline-flex min-h-11 items-center justify-center gap-2 border px-5 py-3 text-sm font-bold ${styles[variant]} ${className}`}>
       {children}
       {arrow && <ArrowRight size={16} aria-hidden="true" />}
     </Link>

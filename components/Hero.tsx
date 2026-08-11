@@ -1,13 +1,14 @@
-import { ArrowRight, Check, Circle, Play, Users } from "lucide-react";
+import { ArrowRight, Check, Circle, Code2, Play } from "lucide-react";
 import { Button } from "./Button";
+import { DecryptHeading } from "./DecryptHeading";
 
 function WorkspaceVisual() {
   return (
-    <div className="relative mx-auto min-w-0 w-full max-w-[590px] overflow-hidden sm:overflow-visible" aria-label="Developer workspace showing code, terminal output, and project progress" role="img">
-      <div className="absolute -left-4 top-14 z-20 hidden border border-[var(--line)] bg-[#111817]/95 px-4 py-3 shadow-2xl sm:block">
+    <div className="hero-workspace relative mx-auto min-w-0 w-full max-w-[590px] overflow-hidden sm:overflow-visible" aria-label="Developer workspace showing code, terminal output, and project progress" role="img">
+      <div className="hero-float-a absolute -left-4 top-14 z-20 hidden border border-[var(--line)] bg-[#111817]/95 px-4 py-3 shadow-2xl sm:block">
         <p className="eyebrow text-[var(--muted)]">Build status</p><p className="mt-1 flex items-center gap-2 text-sm font-bold"><Check className="text-[var(--mint)]" size={15} />Deployed</p>
       </div>
-      <div className="absolute -right-3 bottom-12 z-20 border border-[var(--line)] bg-[#111817]/95 p-4 shadow-2xl">
+      <div className="hero-float-b absolute -right-3 bottom-12 z-20 border border-[var(--line)] bg-[#111817]/95 p-4 shadow-2xl">
         <p className="font-mono text-xs text-[var(--muted)]">PROJECTS SHIPPED</p><p className="mt-2 text-2xl font-bold">08<span className="text-sm text-[var(--mint)]"> / 08</span></p>
       </div>
       <div className="overflow-hidden border border-[#34413e] bg-[#0d1211] shadow-[0_30px_100px_rgba(0,0,0,.5)]">
@@ -44,16 +45,16 @@ function WorkspaceVisual() {
 
 export function Hero() {
   return (
-    <section className="grid-bg relative overflow-hidden border-b border-[var(--line)]">
+    <section className="hero-scene grid-bg relative overflow-hidden border-b border-[var(--line)]">
       <div className="shell grid min-h-[calc(100svh-77px)] items-center gap-14 py-16 lg:grid-cols-[.95fr_1.05fr] lg:py-20">
-        <div className="fade-up relative z-10 min-w-0">
-          <div className="mb-8 inline-flex items-center gap-2 border border-[var(--line)] bg-[#101514] px-3 py-2 text-xs text-[var(--muted)]"><Users size={15} className="text-[var(--mint)]" /><strong className="text-white">10,000+</strong> developers learning</div>
-          <h1 className="display text-balance font-semibold">Build real skills.<br /><span className="text-[var(--mint)]">Ship real projects.</span></h1>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-[var(--muted)] sm:text-xl">Learn modern software development through practical, project-based courses designed to take you from beginner to job-ready.</p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row"><Button href="/courses" arrow className="sm:min-w-44">Explore courses</Button><Button href="/#learning-path" variant="secondary" className="sm:min-w-48"><Play size={16} fill="currentColor" />View learning paths</Button></div>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)]"><span className="flex items-center gap-2"><Check size={15} className="text-[var(--mint)]" />Learn at your pace</span><span className="flex items-center gap-2"><Check size={15} className="text-[var(--mint)]" />Lifetime project access</span></div>
+        <div className="relative z-10 min-w-0">
+          <div className="hero-kicker mb-8 inline-flex items-center gap-2 border border-[var(--line)] bg-[#101514] px-3 py-2 text-xs text-[var(--muted)]"><Code2 size={15} className="text-[var(--mint)]" /><strong className="text-white">Project-first</strong> development learning</div>
+          <DecryptHeading />
+          <p className="hero-copy mt-8 max-w-xl text-lg leading-8 text-[var(--muted)] sm:text-xl">Learn modern software development through practical, project-based courses designed to take you from beginner to job-ready.</p>
+          <div className="hero-actions mt-9 flex flex-col gap-3 sm:flex-row"><Button href="/courses" arrow className="sm:min-w-44">Explore courses</Button><Button href="/#learning-path" variant="secondary" className="sm:min-w-48"><Play size={16} fill="currentColor" />View learning paths</Button></div>
+          <div className="hero-meta mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--muted)]"><span className="flex items-center gap-2"><Check size={15} className="text-[var(--mint)]" />Learn at your pace</span><span className="flex items-center gap-2"><Check size={15} className="text-[var(--mint)]" />Lifetime project access</span></div>
         </div>
-        <WorkspaceVisual />
+        <div className="hero-visual"><WorkspaceVisual /></div>
       </div>
       <a href="#value" aria-label="Scroll to learn more" className="focus-ring absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-2 font-mono text-[10px] uppercase text-[var(--muted)] xl:flex">Scroll to build <ArrowRight className="rotate-90" size={13} /></a>
     </section>

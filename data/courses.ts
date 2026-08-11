@@ -23,8 +23,6 @@ export type Course = {
   accent: "mint" | "yellow" | "coral" | "blue";
   icon: "web" | "python" | "ai" | "javascript";
   instructor: string;
-  rating: number;
-  students: number;
   skills: string[];
   outcomes: string[];
   projectNames: string[];
@@ -46,9 +44,7 @@ export const courses: Course[] = [
     category: "Web",
     accent: "mint",
     icon: "web",
-    instructor: "Maya Chen",
-    rating: 4.9,
-    students: 3240,
+    instructor: "DevForge Curriculum Team",
     skills: ["HTML & CSS", "TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"],
     outcomes: ["Build responsive interfaces from scratch", "Design typed APIs and database schemas", "Ship secure, production-ready applications", "Create a portfolio that demonstrates real ability"],
     projectNames: ["SaaS analytics dashboard", "Full-stack commerce platform", "Team task manager"],
@@ -73,9 +69,7 @@ export const courses: Course[] = [
     category: "Python",
     accent: "yellow",
     icon: "python",
-    instructor: "Jon Bell",
-    rating: 4.8,
-    students: 2180,
+    instructor: "DevForge Curriculum Team",
     skills: ["Python", "APIs", "Web scraping", "CSV & Excel", "Testing", "Scheduling"],
     outcomes: ["Write clean, maintainable Python", "Automate file and data workflows", "Connect services through APIs", "Schedule and monitor reliable scripts"],
     projectNames: ["Invoice data extractor", "Automated report generator", "Website change monitor"],
@@ -99,9 +93,7 @@ export const courses: Course[] = [
     category: "AI",
     accent: "coral",
     icon: "ai",
-    instructor: "Amara Okafor",
-    rating: 4.9,
-    students: 1460,
+    instructor: "DevForge Curriculum Team",
     skills: ["LLM APIs", "Embeddings", "RAG", "Evals", "Agents", "Observability"],
     outcomes: ["Build grounded AI features", "Design reliable retrieval systems", "Evaluate quality and failure modes", "Deploy monitored AI applications"],
     projectNames: ["AI research assistant", "Document Q&A workspace", "Support triage agent"],
@@ -125,9 +117,7 @@ export const courses: Course[] = [
     category: "Development",
     accent: "blue",
     icon: "javascript",
-    instructor: "Leo Martins",
-    rating: 4.7,
-    students: 2840,
+    instructor: "DevForge Curriculum Team",
     skills: ["JavaScript", "DOM", "Async patterns", "APIs", "Testing", "Modules"],
     outcomes: ["Understand JavaScript fundamentals deeply", "Build interactive browser interfaces", "Work confidently with async data", "Organize code into testable modules"],
     projectNames: ["Personal finance tracker", "Live weather interface", "Kanban task board"],

@@ -13,7 +13,7 @@ export function CourseDetailFAQ() {
       <div className="border-t border-[var(--line)]">
         {questions.map(([question, answer], index) => (
           <details className="group border-b border-[var(--line)]" key={question} open={index === 0}>
-            <summary className="focus-ring flex cursor-pointer items-center justify-between gap-6 py-5 font-bold">{question}<Plus className="shrink-0 text-[var(--mint)] group-open:rotate-45" size={18} /></summary>
+            <summary className="focus-ring flex cursor-pointer items-center justify-between gap-6 py-5 font-bold">{question}<Plus className="shrink-0 text-[var(--mint)] transition-transform group-open:rotate-45" size={18} /></summary>
             <p className="max-w-2xl pb-5 leading-7 text-[var(--muted)]">{answer}</p>
           </details>
         ))}

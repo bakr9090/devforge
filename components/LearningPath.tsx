@@ -5,7 +5,7 @@ const steps = ["Programming Fundamentals", "Web Development", "Backend Developme
 
 export function LearningPath() {
   return (
-    <div className="mt-16 grid gap-0 lg:grid-cols-4">
+    <div className="mt-16 grid gap-0 lg:grid-cols-4" data-stagger>
       {steps.map((step, index) => (
         <div className="relative" key={step}>
           <Link href="/courses" className="focus-ring group flex min-h-40 flex-col justify-between border border-[var(--line)] bg-[#0d1110] p-6 hover:border-[var(--mint)] lg:-ml-px lg:-mt-px">

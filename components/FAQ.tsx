@@ -1,7 +1,4 @@
-"use client";
-
 import { Plus } from "lucide-react";
-import { useState } from "react";
 
 const faqs = [
   ["Are the courses beginner friendly?", "Yes. Beginner courses assume no coding experience and build each concept through guided practice before independent projects."],
@@ -14,6 +11,5 @@ const faqs = [
 ];
 
 export function FAQ() {
-  const [open, setOpen] = useState(0);
-  return <div className="mt-12 border-t border-[var(--line)]">{faqs.map(([question, answer], index) => <div className="border-b border-[var(--line)]" key={question}><button className="focus-ring flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-bold" onClick={() => setOpen(open === index ? -1 : index)} aria-expanded={open === index}><span>{question}</span><Plus className={`shrink-0 text-[var(--mint)] transition-transform ${open === index ? "rotate-45" : ""}`} size={20} /></button>{open === index && <p className="max-w-3xl pb-6 leading-7 text-[var(--muted)]">{answer}</p>}</div>)}</div>;
+  return <div className="mt-12 border-t border-[var(--line)]">{faqs.map(([question, answer], index) => <details className="group border-b border-[var(--line)]" key={question} open={index === 0}><summary className="focus-ring flex cursor-pointer items-center justify-between gap-6 py-6 text-left text-lg font-bold"><span>{question}</span><Plus className="shrink-0 text-[var(--mint)] transition-transform group-open:rotate-45" size={20} /></summary><p className="max-w-3xl pb-6 leading-7 text-[var(--muted)]">{answer}</p></details>)}</div>;
 }
